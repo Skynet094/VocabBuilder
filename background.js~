@@ -1,0 +1,37 @@
+chrome.runtime.onInstalled.addListener(function() {
+  var context = "selection";
+  var title = "Save word";
+  var id = chrome.contextMenus.create({"title": title, "contexts":[context],
+                                         "id": "context" + context});  
+});
+
+
+
+chrome.contextMenus.onClicked.addListener(onClickHandler);
+
+
+function onClickHandler(info, tab) {
+  var sText = info.selectionText;	
+
+$.getJSON('../../dictionary.json', function(data) {         
+    alert(data);
+});
+
+
+	var data = {};
+	data.word = sText.toUpperCase();
+	alert(data.word);
+	
+  	if (localStorage['vocabs'] == undefined) { // fixed
+     localu = { vocabs: [] };
+  } else {
+     localu = JSON.parse(localStorage['vocabs']);
+  }
+
+  localu.vocabs.push(data);
+  
+  localStorage['vocabs'] = JSON.stringify(localu); 
+
+   
+  
+};

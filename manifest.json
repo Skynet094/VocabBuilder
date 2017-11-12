@@ -1,0 +1,24 @@
+{
+  "name": "VocaStorage",
+  "browser_action": {
+         "default_title": "Find Meaning",      // optional; shown in tooltip
+          "default_popup": "popUp.html"        // optional
+        },
+
+  "description": "sample",
+  "version": "0.0.1",
+  "permissions": ["contextMenus", "tabs","activeTab",
+        "http://*/*",
+        "https://*/*",
+        "chrome://favicon/",
+        "storage"],
+
+  
+
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  },
+
+  "manifest_version": 2
+}

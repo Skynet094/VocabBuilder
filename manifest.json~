@@ -1,0 +1,15 @@
+{
+  "name": "Right-click menu sample",
+  "description": "sample",
+  "version": "0.0.1",
+  "permissions": ["contextMenus", "tabs",
+        "http://*/*",
+        "https://*/*",
+        "chrome://favicon/",
+        "storage"],
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  },
+  "manifest_version": 2
+}
